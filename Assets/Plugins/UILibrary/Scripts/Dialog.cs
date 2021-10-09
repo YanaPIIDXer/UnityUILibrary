@@ -16,4 +16,25 @@ namespace UILibrary
         /// </summary>
         IObservable<Unit> OnClose { get; }
     }
+
+    /// <summary>
+    /// ダイアログクラス
+    /// </summary>
+    public abstract class Dialog : UIObject, IDialog
+    {
+        /// <summary>
+        /// 閉じられた
+        /// </summary>
+        public IObservable<Unit> OnClose => onCloseSubject;
+
+        /// <summary>
+        /// 閉じられた時のSubject
+        /// </summary>
+        private Subject<Unit> onCloseSubject = new Subject<Unit>();
+
+        void OnDestroy()
+        {
+            onCloseSubject.OnNext(Unit.Default);
+        }
+    }
 }
