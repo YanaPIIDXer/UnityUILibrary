@@ -38,7 +38,7 @@ public class Sequence : MonoBehaviour
                 }
                 catch (Exception e)
                 {
-                    Debug.Log(e.Message);
+                    Debug.LogError(e.Message);
                 }
             }).AddTo(gameObject);
     }
