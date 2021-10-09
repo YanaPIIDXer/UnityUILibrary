@@ -29,6 +29,7 @@ namespace UILibrary.Util
             {
                 var prefab = Resources.Load<GameObject>(path);
                 Debug.Assert(prefab != null, "Prefab Load Failed. Path:{0}", prefab);
+                prefabDic.Add(path, prefab);
             }
 
             var obj = GameObject.Instantiate<GameObject>(prefabDic[path]);
