@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UILibrary
 {
@@ -20,8 +21,10 @@ namespace UILibrary
 
     /// <summary>
     /// UI描画のルートオブジェクト
+    /// Canvasと同じオブジェクトにAttachする
     /// </summary>
     [AddComponentMenu("UILibrary/UIRoot")]
+    [RequireComponent(typeof(Canvas))]
     public class UIRoot : UIObject, IUIRoot
     {
     }
