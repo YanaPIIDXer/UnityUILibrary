@@ -7,6 +7,7 @@ namespace UILibrary.Animation
     /// <summary>
     /// 拡縮アニメーション
     /// </summary>
+    [AddComponentMenu("UILibrary/Animation/Tween Scale")]
     public class AnimationTweenScale : AnimationTween
     {
         /// <summary>
