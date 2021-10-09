@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UILibrary;
+using System;
 
 namespace UILibrary.Animation
 {
@@ -9,6 +11,13 @@ namespace UILibrary.Animation
     /// </summary>
     public abstract class AnimationTween : MonoBehaviour
     {
+        /// <summary>
+        /// アニメーション対象オブジェクト
+        /// </summary>
+        [SerializeField]
+        private UIObject _TargetObject = null;
+        protected UIObject TargetObject { get { return _TargetObject; } }
+
         /// <summary>
         /// アニメーションの時間
         /// </summary>
@@ -35,6 +44,8 @@ namespace UILibrary.Animation
         /// </summary>
         public void Play()
         {
+            if (TargetObject == null) { throw new Exception(string.Format("{0}:TargetObjectが設定されていません", GetType().Name)); }
+
             bIsPlaying = true;
             elapsedTime = 0.0f;
         }

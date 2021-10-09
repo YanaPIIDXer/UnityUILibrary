@@ -26,7 +26,7 @@ namespace UILibrary.Animation
         protected override void OnUpdate(float rate)
         {
             Vector2 current = Vector2.Lerp(InitialScale, TargetScale, rate);
-            transform.localScale = new Vector3(current.x, current.y, 1.0f);
+            TargetObject.transform.localScale = new Vector3(current.x, current.y, 1.0f);
         }
     }
 }

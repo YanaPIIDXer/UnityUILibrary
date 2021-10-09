@@ -7,7 +7,7 @@ namespace UILibrary.Animation
     /// <summary>
     /// 座標移動アニメーション
     /// </summary>
-    [AddComponentMenu("UILibrary/Animation/Position Tween")]
+    [AddComponentMenu("UILibrary/Animation/Tween Position")]
     public class AnimationTweenPosition : AnimationTween
     {
         /// <summary>
@@ -46,11 +46,11 @@ namespace UILibrary.Animation
             Vector2 current = Vector2.Lerp(initialPosition, TargetPosition, rate);
             if (Mode == EMode.World)
             {
-                transform.position = new Vector3(current.x, current.y, transform.position.z);
+                TargetObject.transform.position = new Vector3(current.x, current.y, transform.position.z);
             }
             else
             {
-                transform.localPosition = new Vector3(current.x, current.y, transform.localPosition.z);
+                TargetObject.transform.localPosition = new Vector3(current.x, current.y, transform.localPosition.z);
             }
         }
     }
